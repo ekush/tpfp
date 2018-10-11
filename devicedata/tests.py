@@ -18,3 +18,6 @@ class DatabaseTest(TestCase):
         self.assertEqual(device1.battery_charge, '30')
         self.assertEqual(device2.battery_charge, '70')
         self.assertEqual(device3.battery_charge, '100')
+
+class DataPostAndGetTest(TestCase):
+    pass
