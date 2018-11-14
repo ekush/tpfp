@@ -17,8 +17,11 @@ from django.conf.urls import url
 from django.contrib import admin
 from django.urls import path, include
 
+admin.site.site_header = 'TechCom | Dashboard'
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     url(r'^data/', include('devicedata.urls')),
-    url(r'^api-auth/', include('rest_framework.urls'))
+    url(r'^api-auth/', include('rest_framework.urls')),
+    path('dashboard/', include('dashboard.urls')),
 ]
