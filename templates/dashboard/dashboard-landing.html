@@ -3,9 +3,49 @@
 
 {% block page-content %}
 
+    <div class="row">
+<div class="col-md-8">
+          <!-- AREA CHART -->
+          <div class="box box-primary">
+            <div class="box-header with-border">
+              <h3 class="box-title">Locations</h3>
 
+              <div class="box-tools pull-right">
+                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+                </button>
+                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+              </div>
+            </div>
+            <div class="box-body">
+
+                <div id="mapbox" style="height:250px"></div>
+
+            </div>
+            <!-- /.box-body -->
+          </div>
+        </div>
+
+    </div>
 
 
 {% endblock %}
 
+
+
+
+{% block custom-scripts %}
+<script>
+
+    var mymap = L.map('mapbox').setView([23.7566792,90.3850699], 15);
+    L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
+    attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+    maxZoom: 18,
+    id: 'mapbox.streets',
+    accessToken: 'pk.eyJ1IjoicmFzaGVkdWxrYWJpciIsImEiOiIwV09fZE9ZIn0.6hI_No5mbXLqvlxhdLLRdw'
+}).addTo(mymap);
+
+
+
+</script>
+{% endblock %}
 

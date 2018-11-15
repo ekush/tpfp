@@ -1,8 +1,5 @@
 from typing import Dict, Any
 
-from django.http import HttpResponse
-from django.shortcuts import render
-
 # Create your views here.
 from rest_framework import status
 from rest_framework.decorators import api_view
@@ -33,3 +30,4 @@ def post_data(request):
             return Response(serializer.data, status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
+    return Response(status=status.HTTP_400_BAD_REQUEST)
