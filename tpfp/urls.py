@@ -21,7 +21,7 @@ admin.site.site_header = 'TechCom | Dashboard'
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    url(r'^data/', include('devicedata.urls')),
+    url(r'^api/', include('api.urls')),
     url(r'^api-auth/', include('rest_framework.urls')),
     path('dashboard/', include('dashboard.urls')),
 ]
